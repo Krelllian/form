@@ -21,6 +21,7 @@ export interface IUserData {
 const UserForm = () => {
 
     const [userData, setUserData] = useState<IUserData>()
+    const { id } = useParams()
     const {
         register,
         formState: {
@@ -30,10 +31,6 @@ const UserForm = () => {
     } = useForm({
         mode: 'onBlur'
     })
-
-
-    const { id } = useParams()
-
 
     useEffect(() => {
         getUserData()
@@ -47,7 +44,6 @@ const UserForm = () => {
             console.log('error: ', error);
         }
     }
-
 
     const allowAditing = () => {
         const inputs = document.querySelectorAll('input')
@@ -67,7 +63,7 @@ const UserForm = () => {
     }
 
     const onSubmit = (data: any) => {
-        console.log('Отправка на сервер: ', JSON.stringify(data))
+        console.log(JSON.stringify(data))
     }
 
     return <div className='user-profile'>
@@ -146,8 +142,8 @@ const UserForm = () => {
                     <label htmlFor='comment'>Comment</label>
                     <textarea {...register('comment')} id='comment' readOnly></textarea>
                 </form>
-
                 <button className='user-profile__form__btn btn' type="submit" form='user-form' disabled >Отправить</button>
+
             </>
         }
     </div>;

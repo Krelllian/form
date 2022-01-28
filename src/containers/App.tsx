@@ -9,6 +9,8 @@ import UsersList from '../components/UsersList';
 import Sort from '../components/Sort';
 import UserForm from '../components/UserForm';
 
+//Homepage for githubPages
+export const homepage = '/form/build/'
 
 const App: FC = () => {
 
@@ -49,25 +51,22 @@ const App: FC = () => {
       <header className="App-header">
       </header>
       <main className="App-main container">
+
         <Routes>
-          <Route path='/' element={
+          <Route path={homepage} element={
             <>
               <Sort sortByCity={sortByCity} sortByCompany={sortByCompany} />
               <UsersList users={users} loading={loading} />
             </>
           } />
-          <Route path='/:id' element={
+          <Route path={homepage + ':id'} element={
             <>
               <Sort sortByCity={sortByCity} sortByCompany={sortByCompany} />
               <UserForm />
             </>
           } />
-
-
-          {/* <Route path='/' element={<UsersList users={users} loading={loading} />} /> */}
-
         </Routes>
-        {/* <UsersList users={users} loading={loading} /> */}
+
       </main>
       <footer className="App-footer">
 
