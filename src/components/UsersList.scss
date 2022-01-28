@@ -3,7 +3,8 @@
     background-color: #FFFFFF;
     width: 100%;
     padding-left: 31px;
-    padding-right: 5px;
+    padding-right: 15px;
+    padding-bottom: 25px;
 }
 
 .users-list__title {
@@ -47,6 +48,12 @@
     bottom: 10px;
     font-size: 12px;
     text-decoration: none;
+}
+
+.users-list__found-users {
+    max-width: 420px;
+    font-size: 12px;
+    text-align: right;
 }
 
 

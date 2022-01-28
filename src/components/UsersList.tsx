@@ -38,6 +38,7 @@ const UsersList: FC<IUsersListFC> = ({ users, loading }) => {
             </div>
         )
         )}
+        <p className='users-list__found-users'>Найдено 10 пользователей</p>
     </div>;
 }
 

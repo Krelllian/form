@@ -80,8 +80,8 @@ const UserForm = () => {
                         required: true,
                         value: userData?.name,
                         pattern: {
-                            value: /^[a-zA-Zа-яА-Я'][a-zA-Zа-яА-Я-' ]+[a-zA-Zа-яА-Я']?$/u,
-                            message: 'Введите имя, без символов и чисел',
+                            value: /[A-Z]?[a-zA-Z]{1,30}[ ]?[.]?[']?[ ]?[a-zA-Z]{1,30}[ ]?[.]?[']?[ ]?[a-zA-Z]{0,30}[ ]?[a-zA-Z]{0,30}/,
+                            message: 'Введите имя',
                         }
                     })} className={errors.name && "invalid"} type="text" readOnly ></input>
                     <label htmlFor='user-name'>User name</label>
