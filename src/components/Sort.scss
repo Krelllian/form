@@ -1,0 +1,30 @@
+.users-sort {
+    min-width: 150px;
+    width: 150px;
+    background-color: #BDBDBD;
+    padding-left: 20px;
+    min-height: 100vh;
+}
+
+.users-sort__title {
+    margin: 35px 0 10px 0;
+    font-size: 12px;
+    color: black;
+}
+
+.btn {
+    background-color: #4B51EF;
+    border-radius: 5px;
+    color: white;
+    padding: 5px 15px;
+    border: none;
+    margin-bottom: 10px;
+    font-size: 12px;
+    cursor: pointer;
+    &:last-child {
+        margin-bottom: 0;
+    }
+    &:hover {
+        background-color: darken($color: #4B51EF, $amount: 5%);
+    }
+}

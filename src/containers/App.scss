@@ -1,0 +1,17 @@
+.App {
+  background-color: #f0f0f0;
+  min-height: 100vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  min-width: 530px;
+}
+
+.container {
+  max-width: 665px;
+  width: 100%;
+}
+
+.App-main {
+  display: flex;
+}
