@@ -1,7 +1,7 @@
 import React, { useEffect, useState, FC } from 'react';
 import axios from 'axios';
 import { IUser } from '../components/UsersList';
-import { Routes, Route, Link, Navigate } from 'react-router-dom';
+import { Routes, Route, Link, Navigate, HashRouter } from 'react-router-dom';
 
 import './App.scss';
 
@@ -51,22 +51,20 @@ const App: FC = () => {
       <header className="App-header">
       </header>
       <main className="App-main container">
-
         <Routes>
-          <Route path={homepage} element={
+          <Route path='/' element={
             <>
               <Sort sortByCity={sortByCity} sortByCompany={sortByCompany} />
               <UsersList users={users} loading={loading} />
             </>
           } />
-          <Route path={homepage + ':id'} element={
+          <Route path={'/' + ':id'} element={
             <>
               {/* <Sort sortByCity={sortByCity} sortByCompany={sortByCompany} /> */}
               <UserForm />
             </>
           } />
         </Routes>
-
       </main>
       <footer className="App-footer">
 

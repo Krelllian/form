@@ -34,7 +34,7 @@ const UsersList: FC<IUsersListFC> = ({ users, loading }) => {
                 <p><span className="user-card__span">ФИО:</span>{user.name}</p>
                 <p><span className="user-card__span">город:</span>{user.address.city}</p>
                 <p><span className="user-card__span">компания:</span>{user.company.name}</p>
-                <Link to={homepage + `${user.id}`} className='user-card__details'>Подробнее</Link>
+                <Link to={'/' + `${user.id}`} className='user-card__details'>Подробнее</Link>
             </div>
         )
         )}
