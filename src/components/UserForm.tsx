@@ -66,6 +66,7 @@ const UserForm = () => {
         console.log(JSON.stringify(data))
     }
 
+
     return <div className='user-profile'>
         <div className='user-profile__header'>
             <p className='user-profile__title'>Профиль пользователя</p>
@@ -84,15 +85,19 @@ const UserForm = () => {
                             message: 'Введите имя',
                         }
                     })} className={errors.name && "invalid"} type="text" readOnly ></input>
+                    {errors.name ? <p className='error-message'>Введите имя</p> : ""}
+
                     <label htmlFor='user-name'>User name</label>
                     <input {...register('userName', {
                         required: true,
                         value: userData?.username,
                         pattern: {
                             value: /^[\S]+$/,
-                            message: 'Не используйте пробелы',
+                            message: 'Введите своё имя без пробелов',
                         }
                     })} className={errors.userName && "invalid"} type="text" id='user-name' readOnly ></input>
+                    {errors.userName ? <p className='error-message'>Введите своё имя без пробелов</p> : ""}
+
                     <label htmlFor='e-mail'>E-mail</label>
                     <input {...register('email', {
                         required: true,
@@ -102,16 +107,22 @@ const UserForm = () => {
                             message: 'Введите email',
                         }
                     })} className={errors.email && "invalid"} type="text" id='e-mail' readOnly></input>
+                    {errors.email ? <p className='error-message'>Введите email</p> : ""}
+
                     <label htmlFor='street'>Street</label>
                     <input {...register('street', {
                         required: true,
-                        value: userData?.address.street,
+                        value: userData?.address.street
                     })} className={errors.street && "invalid"} type="text" id='street' readOnly></input>
+                    {errors.street && <p className='error-message'>Введите название улицы</p>}
+
                     <label htmlFor='city'>City</label>
                     <input {...register('city', {
                         required: true,
                         value: userData?.address.city,
                     })} className={errors.city && "invalid"} type="text" id='city' readOnly></input>
+                    {errors.city && <p className='error-message'>Введите название города</p>}
+
                     <label htmlFor='zip-code'>Zip code</label>
                     <input {...register('zipCode', {
                         required: true,
@@ -121,6 +132,8 @@ const UserForm = () => {
                             message: 'Введите zip code',
                         }
                     })} className={errors.zipCode && "invalid"} type="text" id='zip-code' readOnly></input>
+                    {errors.zipCode ? <p className='error-message'>Введите zip code</p> : ""}
+
                     <label htmlFor='phone'>Phone</label>
                     <input {...register('phone', {
                         required: true,
@@ -130,6 +143,8 @@ const UserForm = () => {
                             message: 'Введите номер телефона',
                         }
                     })} className={errors.phone && "invalid"} type="text" id='phone' readOnly></input>
+                    {errors.phone && <p className='error-message'>Введите номер телефона</p>}
+
                     <label htmlFor='website'>Website</label>
                     <input {...register('website', {
                         required: true,
@@ -139,6 +154,8 @@ const UserForm = () => {
                             message: 'Введите название сайта',
                         }
                     })} className={errors.website && "invalid"} type="text" id='website' readOnly></input>
+                    {errors.website && <p className='error-message'>Введите название сайта</p>}
+
                     <label htmlFor='comment'>Comment</label>
                     <textarea {...register('comment')} id='comment' readOnly></textarea>
                 </form>
@@ -150,3 +167,7 @@ const UserForm = () => {
 };
 
 export default UserForm;
+function formState(formState: any) {
+    throw new Error('Function not implemented.');
+}
+

@@ -1,4 +1,5 @@
-import React, { FC } from 'react';
+import React, { FC, useState } from 'react';
+import { useEffect } from 'react';
 import './Sort.scss'
 
 
@@ -9,6 +10,8 @@ export interface IBtnFunctions {
 
 
 const Sort: FC<IBtnFunctions> = ({ sortByCity, sortByCompany }) => {
+
+
     return <aside className='users-sort'>
         <p className='users-sort__title'>Сортировка</p>
         <button className='btn btn--sort-by-city' onClick={sortByCity}>по городу</button>

@@ -61,7 +61,7 @@ const App: FC = () => {
           } />
           <Route path={homepage + ':id'} element={
             <>
-              <Sort sortByCity={sortByCity} sortByCompany={sortByCompany} />
+              {/* <Sort sortByCity={sortByCity} sortByCompany={sortByCompany} /> */}
               <UserForm />
             </>
           } />
